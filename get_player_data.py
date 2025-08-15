@@ -29,10 +29,10 @@ if __name__ == "__main__":
         df_def_prev.iloc[i, df_def_prev.columns.get_loc("Rk")] = i + 1
 
     with pd.ExcelWriter(f'data/NFL_{PREV_YEAR}_player.xlsx', engine='xlsxwriter') as writer:
-        df_qb_prev.to_excel(writer, sheet_name='QBs')
-        df_rb_prev.to_excel(writer, sheet_name='RBs')
-        df_wr_prev.to_excel(writer, sheet_name='WRs')
-        df_def_prev.to_excel(writer, sheet_name='DEF')
+        df_qb_prev.to_excel(writer, sheet_name='Passing_stats')
+        df_rb_prev.to_excel(writer, sheet_name='Running_stats')
+        df_wr_prev.to_excel(writer, sheet_name='Recieving_stats')
+        df_def_prev.to_excel(writer, sheet_name='Defense_stats')
     
     #use this later once the season starts
     """
