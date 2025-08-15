@@ -28,7 +28,7 @@ if __name__ == "__main__":
     for i in range(0, len(df_def_prev)):
         df_def_prev.iloc[i, df_def_prev.columns.get_loc("Rk")] = i + 1
 
-    with pd.ExcelWriter(f'NFL_{PREV_YEAR}.xlsx', engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(f'data/NFL_{PREV_YEAR}_player.xlsx', engine='xlsxwriter') as writer:
         df_qb_prev.to_excel(writer, sheet_name='QBs')
         df_rb_prev.to_excel(writer, sheet_name='RBs')
         df_wr_prev.to_excel(writer, sheet_name='WRs')
@@ -44,12 +44,12 @@ if __name__ == "__main__":
 
     off_abbreviations = ["C", "RB", "FB", "HB", "OG", "OT", 
                          "LG", "LT", "RG", "RT", "TE", "QB", "WR"]
-    df_def_prev = df_def_prev[~df_def_prev["Pos"].isin(off_abbreviations)]
+    df_def_curr = df_def_curr[~df_def_curr["Pos"].isin(off_abbreviations)]
 
-    for i in range(0, len(df_def_prev)):
-        df_def_prev["RK"] = i
+    for i in range(0, len(df_def_curr)):
+        df_def_curr["RK"] = i
 
-    with pd.ExcelWriter(f'NFL_{CURR_YEAR}.xlsx', engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(f'data/NFL_{CURR_YEAR}_player.xlsx', engine='xlsxwriter') as writer:
         df_qb_curr.to_excel(writer, sheet_name='QBs')
         df_rb_curr.to_excel(writer, sheet_name='RBs')
         df_wr_curr.to_excel(writer, sheet_name='WRs')
