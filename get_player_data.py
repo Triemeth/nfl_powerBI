@@ -33,10 +33,10 @@ if __name__ == "__main__":
         df_rb_prev.to_excel(writer, sheet_name='Running_stats')
         df_wr_prev.to_excel(writer, sheet_name='Recieving_stats')
         df_def_prev.to_excel(writer, sheet_name='Defense_stats')
-    
-    #use this later once the season starts
-    """
 
+    #use this later once the season starts
+
+    """
     df_qb_curr = get_data(CURR_YEAR, "passing.htm")
     df_rb_curr = get_data(CURR_YEAR, "rushing.htm")
     df_wr_curr = get_data(CURR_YEAR, "receiving.htm")
@@ -54,5 +54,4 @@ if __name__ == "__main__":
         df_rb_curr.to_excel(writer, sheet_name='RBs')
         df_wr_curr.to_excel(writer, sheet_name='WRs')
         df_def_curr.to_excel(writer, sheet_name='DEF')
-
-    """
+        """
