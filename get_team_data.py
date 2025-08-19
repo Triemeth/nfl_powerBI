@@ -43,9 +43,17 @@ def get_off(year):
 
     return df
 
+def get_def(year):
+    url = f"https://www.pro-football-reference.com/years/{year}/opp.htm"
+    df = pd.read_html(url, header=1)[0]
+
+    return df
+
 if __name__ == "__main__":
     prev_off_df = get_off(PREV_YEAR)
+    prev_def_df = get_def(PREV_YEAR)
 
     with pd.ExcelWriter(f'data/NFL_{PREV_YEAR}_team.xlsx', engine='xlsxwriter') as writer:
         prev_off_df.to_excel(writer, sheet_name='Offensive_team_stats')
+        prev_def_df.to_excel(writer, sheet_name='Defensive_team_stats')
         
