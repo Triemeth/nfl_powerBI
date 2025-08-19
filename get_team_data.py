@@ -54,6 +54,18 @@ if __name__ == "__main__":
     prev_def_df = get_def(PREV_YEAR)
 
     with pd.ExcelWriter(f'data/NFL_{PREV_YEAR}_team.xlsx', engine='xlsxwriter') as writer:
-        prev_off_df.to_excel(writer, sheet_name='Offensive_team_stats')
-        prev_def_df.to_excel(writer, sheet_name='Defensive_team_stats')
+        prev_off_df.to_excel(writer, sheet_name=f'Offensive_team_stats_{PREV_YEAR}')
+        prev_def_df.to_excel(writer, sheet_name=f'Defensive_team_stats_{PREV_YEAR}')
+
+    #use this later once the season starts
+    """
+    
+    curr_off_df = get_off(CURR_YEAR)
+    curr_def_df = get_def(CURR_YEAR)
+
+    with pd.ExcelWriter(f'data/NFL_{CURR_YEAR}_team.xlsx', engine='xlsxwriter') as writer:
+        curr_off_df.to_excel(writer, sheet_name=f'Offensive_team_stats_{CURR_YEAR}')
+        curr_def_df.to_excel(writer, sheet_name=f'Defensive_team_stats_{CURR_YEAR}')
+        
+    """
         
