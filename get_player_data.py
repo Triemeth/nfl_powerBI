@@ -28,6 +28,8 @@ if __name__ == "__main__":
     for i in range(0, len(df_def_prev)):
         df_def_prev.iloc[i, df_def_prev.columns.get_loc("Rk")] = i + 1
 
+    df_qb_prev = df_qb_prev[df_qb_prev["Pos"]=="QB"]
+
     with pd.ExcelWriter(f'data/NFL_{PREV_YEAR}_player.xlsx', engine='xlsxwriter') as writer:
         df_qb_prev.to_excel(writer, sheet_name='Passing_stats')
         df_rb_prev.to_excel(writer, sheet_name='Running_stats')
