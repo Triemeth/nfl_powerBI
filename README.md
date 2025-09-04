@@ -11,8 +11,9 @@ The goal is to support fantasy football drafting and trade decisions by providin
 * Source: Pro-Football-Reference
 * Seasons: Current and previous NFL seasons
 * Data Scraped:
-* * Player statistics: Passing, Rushing, Receiving, Defensive
-* * Team statistics: Offensive & Defensive
+   * Player statistics: Passing, Rushing, Receiving, Defensive
+   * Team statistics: Offensive & Defensive
+    
 Data was collected using Python web scraping scripts and connected to Power BI for visualization
 
 ## Example Dashboards
