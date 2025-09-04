@@ -24,3 +24,16 @@ Users can use a selector (slicer) to filter one or more players/teams (works bes
 ![Power BI Player Rec Dashboard](imgs_for_readme/Rec_player_power_BI.png)
 ### Team Defensive Dashboard
 ![Power BI Team Def Dashboard](imgs_for_readme/team_def_power_BI.png)
+
+## Needed Tech
+* Python
+  * Pandas
+  * selenium
+  * BeautifulSoup
+  * datetime
+* Power BI
+
+## Next Steps
+Automate weekly data refresh during NFL season.
+
+Build predictive models for fantasy projections.
